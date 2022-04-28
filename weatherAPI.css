@@ -1,0 +1,224 @@
+body {
+  font-family: "Chakra Petch", sans-serif;
+  background: url("https://wallpapershome.com/images/pages/pic_h/6548.jpg");
+  background-size: 140rem;
+  background-repeat: no-repeat;
+}
+
+#head {
+  font-size: 80px;
+  text-align: center;
+  font-family: "Kaushan Script", cursive;
+  color: rgb(253, 218, 61);
+  padding: 10px 0;
+  margin: 0;
+  margin-bottom: 0px;
+}
+#input {
+  padding: 10px 50px;
+  margin-left: 35px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+#display {
+  position: relative;
+  height: 40px;
+  width: 200px;
+  margin: 0 35px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  background: rgb(80, 79, 79);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+#display:hover {
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+}
+#display:before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  border-radius: 50px;
+  filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+#display:hover:before {
+  opacity: 1;
+  z-index: -1;
+}
+#display:hover {
+  z-index: 1;
+  animation: glow 6s linear infinite;
+}
+@keyframes glow {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+#container {
+  display: grid;
+  grid-template-columns: 32rem 55rem;
+  height: 560px;
+  padding: 30px;
+  gap: 50px;
+  justify-content: space-between;
+}
+#displayWeather {
+  /* background: rgba(255, 255, 255, 0.3); */
+  /* width: 35%; */
+  text-align: center;
+  border-radius: 14px;
+  /* box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; */
+  font-size: 19px;
+  font-weight: 600;
+}
+
+#displayWeather > h2 {
+  color: red;
+  text-shadow: 0 0 35px #ff0000;
+  margin: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+#displayWeather span {
+  font-family: "Saira Condensed", sans-serif;
+  font-size: 90px;
+}
+#displayWeather :nth-child(2),
+#displayWeather :nth-child(3) {
+  color: rgb(209, 255, 134);
+  text-shadow: 0 0 40px #88ff00;
+}
+#displayWeather :nth-child(4),
+#displayWeather :nth-child(5) {
+  color: rgb(110, 164, 250);
+  text-shadow: 0 0 40px #003cff;
+}
+#displayWeather :nth-child(8) {
+  color: #8bffe6;
+  text-shadow: 0 0 40px #00eeff;
+}
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  border-radius: 12px;
+}
+.mapouter {
+  height: 500px;
+  /* width: 60%; */
+  border-radius: 12px;
+  text-align: center;
+  background-color: azure;
+  background: transparent;
+  opacity: 100%;
+}
+#sevenDayReport {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(7, 10rem);
+  justify-content: space-around;
+  text-align: center;
+  gap: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0 20px;
+  width: 97rem;
+}
+#sevenDayReport > div {
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 0;
+  height: 85%;
+  margin: auto 0;
+  border-radius: 12px;
+}
+#sevenDayReport > div > h4 {
+  font-family: "Supermercado One", cursive;
+  font-size: 25px;
+  margin: 0;
+}
+#sevenDayReport > div > img {
+  width: 50%;
+}
+
+/* For small boxes */
+@media only screen and (min-width: 0px) and (max-width: 320px) {
+  #container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 400px 100px;
+    gap: 20px;
+  }
+  #sevenDayReport {
+    display: grid;
+    grid-template-columns: repeat(1, 12rem);
+    text-align: center;
+    gap: 0.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0 10px;
+    margin: auto;
+    margin-top: 400px;
+    width: 100%;
+  }
+  .mapouter {
+    height: 100px;
+    /* width: 60%; */
+    border-radius: 12px;
+    text-align: center;
+    background-color: azure;
+    background: transparent;
+    opacity: 100%;
+  }
+
+  #displayWeather span {
+    font-family: "Saira Condensed", sans-serif;
+    font-size: 50px;
+  }
+  body {
+    font-family: "Chakra Petch", sans-serif;
+    background: url("https://wallpapershome.com/images/pages/pic_h/6548.jpg");
+    background-size: 400rem;
+    background-repeat: no-repeat;
+  }
+}
+/* For medium boxes */
+@media only screen and (min-width: 321px) and (max-width: 720px) {
+  #container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+  }
+  #sevenDayReport {
+    display: grid;
+    grid-template-columns: repeat(1, 18rem);
+    text-align: center;
+    gap: 0.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0 10px;
+    margin: auto;
+    width: 100%;
+    margin-top: 450px;
+  }
+  body {
+    font-family: "Chakra Petch", sans-serif;
+    background: url("https://wallpapershome.com/images/pages/pic_h/6548.jpg");
+    background-size: 400rem;
+    background-repeat: no-repeat;
+  }
+}
